@@ -6,11 +6,200 @@
     padding: 0;
 }
 
+:root, .red {
+    --main-bg-clr: hsl(222, 26%, 31%);
+    --tgkp-bg-clr: hsl(223, 31%, 20%);
+    --screen-bg-clr: hsl(224, 36%, 15%);
+    --key-bg-clr: hsl(225, 21%, 49%);
+    --key-shw-clr: hsl(224, 28%, 35%);
+    --rstg-bg-clr: hsl(6, 63%, 50%);
+    --reset-shw-clr : hsl(6, 70%, 34%);
+    --rstg-active-bg-clr: hsl(30, 25%, 89%);
+    --reset-active-shw-clr: hsl(28, 16%, 65%);
+    --text-clr-1: hsl(221, 14%, 31%);
+    --text-clr-2: hsl(0, 0%, 100%);
+    --text-clr-3:  hsl(0, 0%, 100%);
+   
+}
+
 body {
     font-family: 'League Spartan', sans-serif;
     font-size: 32px;
+    font-weight: 700;
+    background-color: var(--main-bg-clr);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    padding-top: 5rem;
 }
 
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: min(90%, 450px);
+}
+
+.attribution {
+    font-size: clamp(1rem, 5vw, 1.5rem);
+    color: var(--radio-color);
+    margin-bottom: 2rem;
+}
+
+.attribution a {
+    text-decoration: none;
+    color: var(--text-clr-2);
+}
+
+/* Theme switcher */
+
+.orange {
+    --main-bg-clr:  hsl(0, 0%, 90%);
+    --tgkp-bg-clr: hsl(0, 5%, 81%);
+    --screen-bg-clr: hsl(0, 0%, 93%);
+    --key-bg-clr: hsl(185, 42%, 37%);
+    --key-shw-clr: hsl(185, 58%, 25%);
+    --rstg-bg-clr: hsl(25, 98%, 40%);
+    --reset-shw-clr : hsl(25, 99%, 27%);
+    --rstg-active-bg-clr: hsl(45, 7%, 89%);
+    --reset-active-shw-clr: hsl(35, 11%, 61%);
+    --text-clr-1: hsl(60, 10%, 19%);
+    --text-clr-2: hsl(0, 0%, 100%);
+    --text-clr-3:  hsl(0, 0%, 100%);
+}
+
+.cyan {
+    --main-bg-clr: hsl(268, 75%, 9%);
+    --tgkp-bg-clr: hsl(268, 71%, 12%);
+    --screen-bg-clr: hsl(268, 71%, 12%);
+    --key-bg-clr: hsl(281, 89%, 26%);
+    --key-shw-clr: hsl(285, 91%, 52%);
+    --rstg-bg-clr: hsl(176, 100%, 44%);
+    --reset-shw-clr : hsl(177, 92%, 70%);
+    --rstg-active-bg-clr: hsl(268, 47%, 21%);
+    --reset-active-shw-clr: hsl(290, 70%, 36%);
+    --text-clr-1: hsl(52, 100%, 62%);
+    --text-clr-2: hsl(0, 0%, 100%);
+    --text-clr-3: hsl(198, 20%, 13%);
+}
+
+.calc-header, .themes, .theme-numbering {
+    display: flex;
+}
+
+.calc-header {
+    outline: 1px solid red;
+    justify-content: space-between;
+    color: var(--text-clr-2);
+}
+
+.calc-name, .themes-heading{
+    align-self: flex-end;
+}
+
+.themes {
+    gap: 2rem;
+    font-size: 1.2rem;
+}
+
+.themes-heading {
+    text-transform: uppercase;
+    font-size: .8rem;
+}
+
+.theme-numbering {
+    padding-left: .3rem;
+    gap: .7rem;
+    margin-bottom: .3rem;
+
+}
+
+fieldset {
+    background-color: var(--tgkp-bg-clr);
+    border: 0;
+    border-radius:2rem;
+    width: fit-content;
+    display: flex;
+    gap: .3rem;
+    padding: .3rem;
+}
+
+fieldset > input {
+    appearance: none;
+    height: 1rem;
+    width: 1rem;
+    border-radius: 50%;
+}
+
+fieldset > input[type="radio"]:checked {
+    background-color: var(--radio-color);
+}
+
+fieldset > input[type="radio"]#red {
+    --radio-color: hsl(6, 63%, 50%);
+}
+
+fieldset > input[type="radio"]#orange {
+    --radio-color: hsl(25, 98%, 40%);   
+}
+
+fieldset > input[type="radio"]#cyan {
+    --radio-color: hsl(176, 100%, 44%);
+}
+
+/* Display screen */
+.display-screen {
+    border: 0;
+    padding: 1.5rem 1rem;
+    border-radius: 8px;
+    background-color: var(--screen-bg-clr);
+    color: var(--text-clr-2);
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+    text-align: right;
+}
+
+/* buttons */
+.btns-section {
+    padding: 1.5rem;
+    background-color: var(--tgkp-bg-clr);
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1.5rem;
+}
+
+input[type="button"] {
+    font: inherit;
+    font-size: clamp(1rem, 5vw, 2rem);
+    padding: 1rem;
+    border-radius: 10px;
+    border: 0;
+    border-bottom: 3px solid var(--key-shw-clr);
+    text-align: center;
+    background-color: var(--text-clr-2);
+    color: var(--text-clr-1);
+
+}
+
+input[type="button"].reset-btn, input[type="button"].del-btn{
+    background-color: var(--key-bg-clr);
+    color: var(--text-clr-2);
+    border-bottom: 3px solid var(--key-shw-clr);
+}
+
+.reset-btn, .equal-btn {
+    grid-column: span 2;
+}
+
+input[type="button"].equal-btn {
+    background-color: var(--rstg-bg-clr);
+    border-bottom: 3px solid var(--reset-shw-clr);
+    color: var(--text-clr-2);
+} 
+
+
+/* Hide content for accessibility purpose */
 .visually-hidden {
     clip: rect(0 0 0 0); 
     clip-path: inset(50%);
