@@ -6,7 +6,25 @@
     padding: 0;
 }
 
-:root, .red {
+body {
+    font-family: 'League Spartan', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    background-color: var(--main-bg-clr);
+    padding-top: 2rem;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: min(90%, 450px);
+    margin-inline: auto;
+}
+
+/* Theme switcher */
+
+.red {
     --main-bg-clr: hsl(222, 26%, 31%);
     --tgkp-bg-clr: hsl(223, 31%, 20%);
     --screen-bg-clr: hsl(224, 36%, 15%);
@@ -18,30 +36,9 @@
     --reset-active-shw-clr: hsl(28, 16%, 65%);
     --text-clr-1: hsl(221, 14%, 31%);
     --text-clr-2: hsl(0, 0%, 100%);
-    --text-clr-3: hsl(0, 0%, 100%);;
-   
+    --text-clr-3: hsl(0, 0%, 100%);
 }
 
-body {
-    font-family: 'League Spartan', sans-serif;
-    font-size: 32px;
-    font-weight: 700;
-    background-color: var(--main-bg-clr);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 32px;
-    padding-top: 2rem;
-}
-
-.container {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    width: min(90%, 450px);
-}
-
-/* Theme switcher */
 
 .orange {
     --main-bg-clr:  hsl(0, 0%, 90%);
@@ -88,7 +85,7 @@ body {
 }
 
 .themes {
-    gap: 2rem;
+    gap: 1rem;
     font-size: 1.2rem;
 }
 
@@ -122,29 +119,19 @@ fieldset > input {
 }
 
 fieldset > input[type="radio"]:checked {
-    background-color: var(--radio-color);
-}
-
-fieldset > input[type="radio"]#red {
-    --radio-color: hsl(6, 63%, 50%);
-}
-
-fieldset > input[type="radio"]#orange {
-    --radio-color: hsl(25, 98%, 40%);   
-}
-
-fieldset > input[type="radio"]#cyan {
-    --radio-color: hsl(176, 100%, 44%);
+    background-color: var(--rstg-bg-clr);
 }
 
 /* Display screen */
 .display-screen {
     border: 0;
-    padding: 1.5rem 1rem;
+    padding: 2rem 1rem;
     border-radius: 8px;
     background-color: var(--screen-bg-clr);
     color: var(--text-clr-3);
     font-size: clamp(1.5rem, 6vw, 2.5rem);
+    word-wrap: break-word;
+    word-break: break-all;
     text-align: right;
 }
 
@@ -171,20 +158,17 @@ input[type="button"] {
     cursor: pointer;
 }
 
-input[type="button"].reset-btn, input[type="button"].del-btn{
-    background-color: var(--key-bg-clr);
+input[type="button"].reset-btn, input[type="button"].del-btn, input[type="button"].equal-btn{
     color: var(--text-clr-2);
-    border-bottom: 3px solid var(--key-shw-clr);
 }
 
 .reset-btn, .equal-btn {
     grid-column: span 2;
-}
+} 
 
 input[type="button"].equal-btn {
     background-color: var(--rstg-bg-clr);
     border-bottom: 3px solid var(--reset-shw-clr);
-    color: var(--text-clr-2);
 } 
 
 input[type="button"]:active {
